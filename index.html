@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="ja"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;旅タイプ診断&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f7f7f7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1, h2 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.field {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>input, select {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #4f46e5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>button:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #aaa;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.choice {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.choice:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f0f0ff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hidden {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.result {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;旅タイプ診断&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 基本情報 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="step-basic"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;今回の日数&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;select id="days" onchange="checkStart()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option value=""&gt;選択してください&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;日帰り&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;1泊2日&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;2泊3日&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;3泊4日&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;option&gt;4泊5日以上&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="field"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label&gt;1人あたりの予算&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="budget" placeholder="例：5万円" oninput="checkStart()" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button id="startBtn" onclick="startQuestions()" disabled&gt;診断スタート&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 質問 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="step-question" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 id="question-text"&gt;&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="choices"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- 結果 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="step-result" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;診断結果&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="result" id="result-text"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const questions = [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '旅の朝、あなたはどんな風に目覚めたい？', a: ['自然・癒やし','都会・刺激','優雅・リラックス','自由・気まま'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '知らない路地に迷い込んだら？', a: ['探検する','地図を見る','人に聞く','写真を撮る'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '旅先の食事で重視することは？', a: ['名店','ローカル','雰囲気','食べ歩き'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '本を一冊持っていくなら？', a: ['歴史小説','漫画','哲学書','ガイドブック'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '旅の靴を選ぶなら？', a: ['スニーカー','おしゃれ靴','スリッパ','トレッキング'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '夜の過ごし方は？', a: ['バー','星空','マッサージ','夜景散策'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: 'カバンの余白は？', a: ['空っぽ','準備万端','ミニマル','お土産用'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '行きたい時代は？', a: ['太古','中世','未来','子供時代'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: '帰宅後どうなっていたい？', a: ['筋肉痛','賢く','潤い','活力満タン'] },</p>
+<p class="p1"><span class="Apple-converted-space">      </span>{ q: 'あなたにとって旅とは？', a: ['冒険','逃避','発見','交流'] }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let index = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let answers = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function checkStart() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const days = document.getElementById('days').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const budget = document.getElementById('budget').value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('startBtn').disabled = !(days &amp;&amp; budget);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function startQuestions() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('step-basic').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('step-question').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showQuestion();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showQuestion() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const q = questions[index];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('question-text').innerText = `Q${index + 1}. ${q.q}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const choicesDiv = document.getElementById('choices');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>choicesDiv.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>q.a.forEach((text, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>div.className = 'choice';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>div.innerText = text;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>div.onclick = () =&gt; selectAnswer(i);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>choicesDiv.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function selectAnswer(i) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>answers.push(i);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>index++;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (index &lt; questions.length) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>showQuestion();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>showResult();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showResult() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('step-question').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('step-result').classList.remove('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const days = document.getElementById('days').value;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const budget = document.getElementById('budget').value;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const type = answers.filter(a =&gt; a === 0).length &gt;= 3</p>
+<p class="p1"><span class="Apple-converted-space">        </span>? '五感で感じるネイチャー・ビースト'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>: '知的好奇心旺盛なタイムトラベラー';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const place = type === '五感で感じるネイチャー・ビースト'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>? '屋久島・大自然トレッキング'</p>
+<p class="p1"><span class="Apple-converted-space">        </span>: '金沢・歴史とアートの旅';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('result-text').innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;strong&gt;${type}&lt;/strong&gt; タイプです。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;日程：${days} ／ 予算：${budget}&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;おすすめの旅先：&lt;strong&gt;${place}&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
